@@ -12,3 +12,10 @@ func main() {
 	firstName = "Tricia"
 	fmt.Println(ptr, *ptr)
 }
+
+/*
+$ go run main.go
+Arthur
+0xc000010200 Arthur
+0xc000010200 Tricia
+*/
