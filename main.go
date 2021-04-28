@@ -3,19 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	firstName := "Arthur"
-	fmt.Println(firstName)
+	const pi = 3.1415
+	fmt.Println(pi)
 
-	ptr := &firstName
-	fmt.Println(ptr, *ptr)
+	const c int = 3
+	fmt.Println(c + 3)
 
-	firstName = "Tricia"
-	fmt.Println(ptr, *ptr)
+	// fmt.Println(c + 1.2)  1.2 (untyped float constant) truncated to int
+	fmt.Println(float32(c) + 1.2)
 }
 
 /*
 $ go run main.go
-Arthur
-0xc000010200 Arthur
-0xc000010200 Tricia
+3.1415
+6
+4.2
 */
