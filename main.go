@@ -2,20 +2,23 @@ package main
 
 import "fmt"
 
+const (
+	first  = iota + 6  // first = 6 && iota = 0 prints 6
+	second = 2 << iota // second = 2 << 2 || 2 * iota(1) * 2 = 4 && iota = 1 + 6(first) prints 4
+	third  = 3 << iota // third 3 << 3 ??? prints 12
+	fourth             // ?????? prints 24
+)
+
+const (
+	fifth = iota
+	sixth
+)
+
 func main() {
-	const pi = 3.1415
-	fmt.Println(pi)
-
-	const c int = 3
-	fmt.Println(c + 3)
-
-	// fmt.Println(c + 1.2)  1.2 (untyped float constant) truncated to int
-	fmt.Println(float32(c) + 1.2)
+	fmt.Println(first, second, third, fourth, fifth, sixth)
 }
 
 /*
 $ go run main.go
-3.1415
-6
-4.2
+6 4 12 24 0 1
 */
