@@ -1,26 +1,21 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
+
+	"github.com/MarcosRibeiroJesus/Go-Getting-Started/controllers"
 )
 
 func main() {
-	port := 3000
-	_, err := startWebServer(port)
-	fmt.Println(err)
-}
-
-func startWebServer(port int) (int, error) {
-	fmt.Println("Starting server...")
-	// do important things
-	fmt.Println("Server started on port", port)
-	return port, nil
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
 }
 
 /*
-go run .
+$ go build .
+$ ./Go-Getting-Started
 
-Starting server...
-Server started on port 3000
-<nil>
+http://localhost:3000/users
+
+Hello from the User Controller!
 */
