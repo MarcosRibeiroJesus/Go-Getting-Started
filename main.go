@@ -1,22 +1,22 @@
 package main
 
 func main() {
-	var i int
-	for {
-		if i == 5 {
-			break
-		}
-		println(i)
-		i++
+	// wellKnownPorts := map[string]int{"http": 80, "https": 443}
+	slice := []int{1, 2, 3}
+	for i, v := range slice {
+		println(i, v)
 	}
 }
 
 /*
-$ go run main.go
+$ go run main.go with map
 
-0
-1
-2
-3
-4
+https 443
+http 80
+
+$ go run main.go with slice
+
+0 1
+1 2
+2 3
 */
