@@ -1,10 +1,14 @@
 package main
 
 func main() {
-	for i := 0; i < 5; i++ {
+	var i int
+	for {
+		if i == 5 {
+			break
+		}
 		println(i)
+		i++
 	}
-	// println(i) // ./main.go:7:10: undefined: i
 }
 
 /*
