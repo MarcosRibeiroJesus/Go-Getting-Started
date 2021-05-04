@@ -1,35 +1,18 @@
 package main
 
 func main() {
-	var i int
-	for i < 5 {
+	for i := 0; i < 5; i++ {
 		println(i)
-		i++
-		if i == 3 {
-			// break
-			continue
-		}
-		println("continuing...")
 	}
+	// println(i) // ./main.go:7:10: undefined: i
 }
 
 /*
-$ go run main.go // break
-0
-continuing...
-1
-continuing...
-2
-
-$ go run main.go // continue
+$ go run main.go
 
 0
-continuing...
 1
-continuing...
 2
 3
-continuing...
 4
-continuing...
 */
