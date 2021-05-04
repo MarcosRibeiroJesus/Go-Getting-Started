@@ -5,22 +5,22 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, functions!")
 	port := 3000
-	startWebServer(port, 2)
+	_, err := startWebServer(port)
+	fmt.Println(err)
 }
 
-func startWebServer(port, numbersOfRetries int) {
+func startWebServer(port int) (int, error) {
 	fmt.Println("Starting server...")
 	// do important things
 	fmt.Println("Server started on port", port)
-	fmt.Println("Numbers of retries", numbersOfRetries)
+	return port, nil
 }
 
 /*
 go run .
 
-Hello, functions!
 Starting server...
-Server started!
+Server started on port 3000
+<nil>
 */
