@@ -1,21 +1,35 @@
 package main
 
-import (
-	"net/http"
-
-	"github.com/MarcosRibeiroJesus/Go-Getting-Started/controllers"
-)
-
 func main() {
-	controllers.RegisterControllers()
-	http.ListenAndServe(":3000", nil)
+	var i int
+	for i < 5 {
+		println(i)
+		i++
+		if i == 3 {
+			// break
+			continue
+		}
+		println("continuing...")
+	}
 }
 
 /*
-$ go build .
-$ ./Go-Getting-Started
+$ go run main.go // break
+0
+continuing...
+1
+continuing...
+2
 
-http://localhost:3000/users
+$ go run main.go // continue
 
-Hello from the User Controller!
+0
+continuing...
+1
+continuing...
+2
+3
+continuing...
+4
+continuing...
 */
