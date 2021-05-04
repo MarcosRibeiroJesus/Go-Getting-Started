@@ -3,22 +3,28 @@ package main
 import "fmt"
 
 func main() {
-	m := map[string]int{"foo": 42}
-	fmt.Println(m)
-	fmt.Println(m["foo"])
+	type user struct {
+		ID        int
+		FirstName string
+		LastName  string
+	}
+	var u user
+	u.ID = 1
+	u.FirstName = "Marcos"
+	u.LastName = "Ribeiro"
+	fmt.Println(u.FirstName + " " + u.LastName)
 
-	m["foo"] = 33
-	fmt.Println(m)
-
-	delete(m, "foo")
-	fmt.Println(m)
+	u2 := user{
+		ID:        1,
+		FirstName: "Marcos",
+		LastName:  "Ribeiro",
+	}
+	fmt.Println(u2)
 }
 
 /*
 $ go run main.go
 
-map[foo:42]
-42
-map[foo:33]
-map[]
+Marcos Ribeiro
+{1 Marcos Ribeiro}
 */
