@@ -19,4 +19,8 @@ func main() {
 go run github.com/MarcosRibeiroJesus/Go-Getting-Started/ or go run .
 
 {2 Luan Samuel}
+
+go build github.com/MarcosRibeiroJesus/Go-Getting-Started/
+
+Go-Getting-Started
 */
