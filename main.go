@@ -1,27 +1,33 @@
 package main
 
+type User struct {
+	ID        int
+	FirstName string
+	LastName  string
+}
+
 func main() {
-	println("Starting web server...")
-
-	// do important things
-	panic("Something bad just happened...")
-
-	println("Web server started") // unreachable code
+	u1 := User{
+		ID:        1,
+		FirstName: "Arthur",
+		LastName:  "Dent",
+	}
+	u2 := User{
+		ID:        2,
+		FirstName: "Ford",
+		LastName:  "Prefect",
+	}
+	if u1 == u2 {
+		println("Same user!")
+	} else if u1.FirstName == u2.FirstName {
+		println("Similar user.")
+	} else {
+		println("Different user!")
+	}
 }
 
 /*
-go run main.go // panic
+$ go run main.go
 
-Starting web server...
-panic: Something bad just happened...
-
-goroutine 1 [running]:
-main.main()
-        /home/marcosribeiro/Documents/Learning/Go/Go-Getting-Started/main.go:7 +0x5c
-exit status 2
-
-go run main.go // without panic
-
-Starting web server...
-Web server started
+Different user!
 */
